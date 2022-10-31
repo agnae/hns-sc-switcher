@@ -24,13 +24,13 @@ Update `appsettings.config` with your miner's IP address and pool information fo
 ### Other usages
 Crond example (switch on a schedule)
 ```
-0  19 *  *  *  /usr/local/bin/hs-sia-switcher SC
-0  3  *  *  *  /usr/local/bin/hs-sia-switcher HNS
+0  19 *  *  *  /usr/local/bin/hns-sc-switcher SC
+0  3  *  *  *  /usr/local/bin/hns-sc-switcher HNS
 ```
 
 Send email alert (with mailgun)
 ```
-0  19 *  *  *  /usr/local/bin/hs-sia-switcher SC 2>&1 | curl -s --user 'api:YOUR_API_KEY' https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages -F from='YOUR_FROM_EMAIL' -F to='YOUR_TO_EMAIL' -F subject='HNS-SC Switcher | Switched to SC' -F text="$(xargs -0)"
-0  3  *  *  *  /usr/local/bin/hs-sia-switcher HNS  2>&1 | curl -s ---user 'api:YOUR_API_KEY' https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages -F from='YOUR_FROM_EMAIL' -F to='YOUR_TO_EMAIL' -F subject='HNS-SC Switcher | Switched to HNS' -F text="$(xargs -0)"
-3  3,19  *  *  *  /usr/local/bin/hs-sia-switcher 2>&1 | curl -s --user 'api:YOUR_API_KEY' https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages -F from='YOUR_FROM_EMAIL' -F to='YOUR_TO_EMAIL' -F subject='HNS-SC Switcher | Stats' -F text="$(xargs -0)"
+0  19 *  *  *  /usr/local/bin/hns-sc-switcher SC 2>&1 | curl -s --user 'api:YOUR_API_KEY' https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages -F from='YOUR_FROM_EMAIL' -F to='YOUR_TO_EMAIL' -F subject='HNS-SC Switcher | Switched to SC' -F text="$(xargs -0)"
+0  3  *  *  *  /usr/local/bin/hns-sc-switcher HNS  2>&1 | curl -s ---user 'api:YOUR_API_KEY' https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages -F from='YOUR_FROM_EMAIL' -F to='YOUR_TO_EMAIL' -F subject='HNS-SC Switcher | Switched to HNS' -F text="$(xargs -0)"
+3  3,19  *  *  *  /usr/local/bin/hns-sc-switcher 2>&1 | curl -s --user 'api:YOUR_API_KEY' https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages -F from='YOUR_FROM_EMAIL' -F to='YOUR_TO_EMAIL' -F subject='HNS-SC Switcher | Stats' -F text="$(xargs -0)"
 ```
