@@ -1,4 +1,4 @@
-# hns-sc-switcher
+# hns-sc-switcher // Handshake ↔️ Siacoin
 ![hns-sc-switcher logo](https://user-images.githubusercontent.com/4912057/198945190-f7591003-b27b-40bf-9fcd-e07419b03e2a.png)
 
 Algo switcher between blake2bsha3(HNS) &amp; blake2b(SC) for mining hardware by Goldshell
